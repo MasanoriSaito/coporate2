@@ -312,7 +312,6 @@ body {
 }
 
 header {
-  background-color: tomato;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
