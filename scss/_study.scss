@@ -1,0 +1,41 @@
+#study {
+    .items {
+        flex-wrap: wrap;
+    }
+    .item {
+        width: 49%;
+
+        @include sp {
+            width: 100%;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            margin-bottom: 30px;
+            @include sp {
+                margin: 0;
+            }
+        }
+    }
+
+    .content__tag {
+        justify-content: flex-end;
+    }
+}
+
+.main_img {
+    margin-bottom: 78px;
+    @include sp {
+        margin-bottom: 40px;
+    }
+    .main_wrap {
+        height: 35vh;
+        background-image: url(../img/main_img.png);
+        background-size: cover;
+    }
+}
+
+footer {
+    height: 40px;
+    background-color: $navy;
+}

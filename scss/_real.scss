@@ -1,0 +1,49 @@
+#real {
+    .items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 85px;
+
+        @include sp {
+            margin-bottom: 15px;
+        }
+
+        .item {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-bottom: 36px;
+
+                @include sp {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .more_view {
+        background-color: $navy;
+        width: 100% - 39% * 2;
+        text-align: center;
+        color: white;
+        margin: 0 auto;
+        padding: 22px 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: #fff;
+            color: $navy;
+            border: 1px solid $navy;
+        }
+
+        @include sp {
+            width: 50vw;
+            padding: 10px 0;
+            border-radius: 10px;
+        }
+    }
+}

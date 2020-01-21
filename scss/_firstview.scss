@@ -1,0 +1,35 @@
+#firstview {
+    width: 100%;
+    background-color: $navy;
+    
+    .fv_img {
+        background-image: url(../img/fv.png);
+        background-size: cover;
+        height: 70vh;
+
+        @include sp {
+            height: 35vh;
+            background-size: cover;
+        }
+    }
+
+    .main_wrap {
+        padding: 13px 0;
+        color: #fff;
+        @include sp {
+            display: none;
+        }
+    }
+
+    .fv_announcement {
+        display: flex;
+
+        p {
+            margin-right: 1.9rem;
+            &:last-child {
+            margin: 0;
+        }
+        }
+        
+    }
+}

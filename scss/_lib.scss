@@ -1,0 +1,179 @@
+//////////////
+///   変数   ///
+//////////////
+$navy: #1D2D44;
+$gray: #C9C9C9;
+$font_gray: #747373;
+$yellow: #F3C969;
+
+$box_shadow: 0px 3px 6px #00000029;
+$radius: 5px;
+
+//////////////
+///   mixin  ///
+//////////////
+@mixin pc {
+    @media screen and (min-width: 960px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (max-width: 959px) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+
+//////////////
+///   共通   ///
+//////////////
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.67;
+}
+
+.separate {
+    display: flex;
+    @include tab {
+        flex-direction: column;
+    }
+
+    .main {
+        width: 79vw;
+        @include tab {
+            width: 100%;
+        }
+    }
+
+    .sub {
+        background-color: #F8F8F8;
+        width: 21vw;
+        @include tab {
+            width: 100%;
+        }
+    }
+}
+
+.bg {
+        height: 30vh;
+        background-color: #BBBBBB;
+}
+
+.main_wrap {
+    width: 93%;
+    padding: 55px 0;
+    margin: 0 auto;
+    @include sp {
+        padding: 30px 0;
+    }
+}
+
+.title {
+    line-height: 1;
+    @include sp {
+        text-align: center;
+    }
+    &__logo {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    &__catch {
+        color: $font_gray;
+        margin-bottom: 12px;
+    }
+
+    .border {
+        width: 100%;
+        height: 7px;
+        background: linear-gradient(90deg, $navy 0%, $navy 30%, #D8D8D8 30%, #D8D8D8 100%);
+        margin-bottom: 28px;
+        @include sp {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include sp {
+        flex-direction: column;
+    }
+
+    .item {
+        width: 30%;
+        @include sp {
+            width: 100%;
+        }
+        .gray {
+            width: 100%;
+            height: 30vh;
+            background-color: $gray;
+        }
+    
+        .content {
+            width: 100%;
+            padding-top: 18px;
+    
+            &__day {
+                color: $font_gray;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                @include sp {
+                    margin: 0;
+                }
+            }
+    
+            &__catch {
+                font-size: 1.6rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+                @include sp {
+                    margin-bottom: 10px;
+                }
+            }
+    
+            &__desc {
+                margin-bottom: 17px;
+                @include sp {
+                    margin-bottom: 10px;
+                }
+            }
+    
+            &__tag {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include sp {
+                    margin-bottom: 13px;
+                }
+    
+                .tag_name {
+                    padding: 8px 35px;
+                    background-color: $yellow;
+                    color: #fff;
+                }
+    
+                .more {
+                    font-size: 1.2rem;
+                    color: $font_gray;
+                }
+            }
+        }
+    }
+}

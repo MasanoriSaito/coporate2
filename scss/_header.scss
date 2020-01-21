@@ -1,0 +1,105 @@
+header {
+    background-color: tomato;
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 41px;
+    align-items: center;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    #ham {
+        width: 25px;
+        height: 15px;
+        position: relative;
+        @include pc {
+            display: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span {
+            width: 25px;
+            height: 1px;
+            background-color: $navy;
+            position: absolute;
+
+            transition: transform 0.5s;
+            opacity: 0.5s;
+        }
+
+        .top {
+            &.open {
+                top: 7.5px;
+                transform: rotateZ(45deg);
+            }
+        }
+
+        .middle {
+            top: 7.5px;
+            &.open {
+                opacity: 0;
+            }
+        }
+
+        .bottom {
+            top: 15px;
+            &.open {
+                top: 7.5px;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+
+    .hd_menu {
+        width: 70%;
+        @include tab {
+            display: none;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    li {
+        font-weight: bold;
+    }
+
+    .slash {
+        border: 0.3px solid;
+        transform: matrix(0.97, 0.26, -0.26, 0.97, 0, 0);
+    }
+}
+
+#ham_open {
+    text-align: center;
+    width: 100vw;
+    position: absolute;
+    z-index: 10;
+    background-color: $navy;
+    color: #fff;
+    padding: 7% 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    &.open {
+        opacity: 1;
+    }
+
+    @include pc {
+        display: none;
+    }
+
+    li {
+        font-size: 1.5rem;
+        line-height: 50px;
+        a:hover {
+            border-bottom: 1px solid;
+        }
+    }
+}
