@@ -442,6 +442,12 @@ header .slash {
   border-bottom: 1px solid;
 }
 
+@media screen and (max-width: 600px) {
+  #ham_open li {
+    line-height: 30px;
+  }
+}
+
 #firstview {
   width: 100%;
   background-color: #1D2D44;
